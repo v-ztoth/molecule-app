@@ -9,13 +9,15 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "owasp-dependency-check": "^0.0.8",
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+    "dependency-check": "owasp-dependency-check --project chemicalize-ui"
   },
   "eslintConfig": {
     "extends": [
