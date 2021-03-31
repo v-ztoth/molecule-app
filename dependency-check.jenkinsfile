@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    options { disableConcurrentBuilds() }
+    environment {
+        JAVA_HOME = '/data/apps/java/1.11'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                withEnv(["PATH+NODEJS=${NODEJS}"]) {
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Dependency check') {
+            steps {
+                withEnv(["PATH+NODEJS=${NODEJS}"]) {
+                    sh 'npm run owasp'
+                }
+            }
+        }
+    }
+}
