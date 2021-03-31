@@ -1,19 +1,18 @@
 pipeline {
     agent any
     options { disableConcurrentBuilds() }
+    
+    tools { nodejs "nodejs" }
+    
     stages {
         stage('Build') {
             steps {
-                withEnv(["PATH+NODEJS=15.12.0"]) {
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
         stage('Dependency check') {
             steps {
-                withEnv(["PATH+NODEJS=15.12.0"]) {
-                    sh 'npm run dependency-check'
-                }
+                sh 'npm run dependency-check'
             }
         }
     }
