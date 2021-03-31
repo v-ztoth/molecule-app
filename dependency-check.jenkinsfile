@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withEnv(["PATH+NODEJS=${NODEJS}"]) {
+                withEnv(["PATH+NODEJS=15.12.0"]) {
                     sh 'npm install'
                 }
             }
         }
         stage('Dependency check') {
             steps {
-                withEnv(["PATH+NODEJS=${NODEJS}"]) {
+                withEnv(["PATH+NODEJS=15.12.0"]) {
                     sh 'npm run dependency-check'
                 }
             }
