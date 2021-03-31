@@ -2,7 +2,7 @@ pipeline {
     agent any
     options { disableConcurrentBuilds() }
     
-    tools { nodejs "nodejs" }
+    tools { nodejs "NodeJS" }
     
     stages {
         stage('Build') {
